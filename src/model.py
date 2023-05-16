@@ -9,7 +9,7 @@ import os
 load_dotenv()
 
 
-os.environ['OPENAI_API_KEY'] = os.environ['open_ai_api']
+#os.environ['OPENAI_API_KEY'] = os.environ['open_ai_api']
 api_key = os.getenv('API_KEY')
 
 def create_model_and_agent():
