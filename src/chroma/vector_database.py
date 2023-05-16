@@ -7,9 +7,9 @@ import os
 from chroma.data_process import create_load_pdf_loader
 from dotenv import load_dotenv
 
-os.environ["OPENAI_API_KEY"] = os.getenv('API_KEY')
+os.environ["OPENAI_API_KEY"] = os.environ.get('API_KEY')
 load_dotenv()
-api_key = os.getenv('API_KEY')
+#api_key = os.getenv('API_KEY')
 def chroma_vectordb():
     
     pages = create_load_pdf_loader()
