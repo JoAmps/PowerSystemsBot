@@ -10,11 +10,12 @@ load_dotenv()
 
 
 os.environ['OPENAI_API_KEY'] = os.environ['open_ai_api']
+api_key = os.getenv('API_KEY')
 
 def create_model_and_agent():
     toolkit, _ = chroma_vectordb()
     # Create instance of OpenAI LLM
-    llm = OpenAI(temperature=0.1,verbose=False)
+    llm = OpenAI(temperature=0.1,verbose=False, api_key=api_key)
     # Add the toolkit to an end-to-end LC
     agent_executor = create_vectorstore_agent(
         llm=llm,
