@@ -3,10 +3,12 @@ from langchain.agents.agent_toolkits import (
     VectorStoreToolkit,
     VectorStoreInfo
 )
+
 from chroma.data_process import create_load_pdf_loader
 
 
 def chroma_vectordb():
+    
     pages = create_load_pdf_loader()
     # Load documents into ChromaDB vector database
     store = Chroma.from_documents(pages, collection_name='power_systems')
