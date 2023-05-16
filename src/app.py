@@ -7,7 +7,7 @@ from chroma.vector_database import chroma_vectordb
 st.title('🦜🔗 Power system Protection')
 
 _, store = chroma_vectordb()
-# Create a text input box for the user to enter their API key
+
 def set_api_key(api_key):
     os.environ["OPENAI_API_KEY"] = api_key
 
@@ -34,10 +34,6 @@ with st.sidebar:
         set_api_key(api_key)
         st.success("API key set successfully!")
 
-
-# If the user clicks a button to set the API key
-
-
 # Create a text input box for the user
 instruction = "If context length is exceed, summarize the reponse to a level students can understand"
 prompt = st.text_input("Input your prompt here")
@@ -45,14 +41,14 @@ prompt = st.text_input("Input your prompt here")
 # If the user hits enter
 agent_executor = create_model_and_agent()
 if prompt:
-    # Then pass the prompt to the LLM
+
     response = agent_executor.run(instruction +"."+ prompt)
-    # ...and write it out to the screen
+    # print response to screen
     st.write(response)
 
-    #With a streamlit expander  
+    # Add block to show the source the answer came from 
     with st.expander('Source Material'):
-         #Find the relevant pages
+         # Find relevant pages
         search = store.similarity_search_with_score(prompt) 
-        # Write out the first 
+        # Print to screen the most important one 
         st.write(search[0][0].page_content) 

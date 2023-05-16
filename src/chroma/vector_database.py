@@ -8,10 +8,9 @@ from chroma.data_process import create_load_pdf_loader
 
 def chroma_vectordb():
     pages = create_load_pdf_loader()
-    # Load documents into vector database aka ChromaDB
+    # Load documents into ChromaDB vector database
     store = Chroma.from_documents(pages, collection_name='power_systems')
 
-    # Create vectorstore info object - metadata repo?
     vectorstore_info = VectorStoreInfo(
         name="power_systems",
         description="power systems protection as a pdf",
