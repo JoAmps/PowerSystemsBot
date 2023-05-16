@@ -4,7 +4,7 @@ from model import create_model_and_agent
 from chroma.vector_database import chroma_vectordb
 
 
-st.title('🦜🔗 Power system Protection')
+st.title('🦜🔗 Power systems Protection')
 
 _, store = chroma_vectordb()
 
