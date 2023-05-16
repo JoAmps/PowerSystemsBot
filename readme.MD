@@ -17,4 +17,5 @@ With PowerSystem Bot, students can efficiently navigate the complexities of elec
 # Technical details
 
 The PowerSystemBot application is built using a combination of powerful tools and technologies. The backend development is done in Python, providing a robust foundation for the entire application. OpenAI's GPT 3.5 model is employed as the language model, enabling the generation of accurate and context-aware responses. To streamline the development process of the language model, Langchain framework is utilized, with its agent to decide which steps to take, or in this case, which lecture notes or documents to look at. 
+
 The application leverages Chroma Vector Database, a reliable storage system to store the embeddings to enable fast retrieval. On the frontend, the user interface is developed using Streamlit web application framework, offering a seamless and intuitive experience for users. Together, these tools and technologies form the backbone of PowerSystemBot, enabling efficient and effective interactions between users and the AI-powered question and answering system.
