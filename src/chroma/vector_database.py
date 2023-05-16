@@ -5,7 +5,10 @@ from langchain.agents.agent_toolkits import (
 )
 import os
 from chroma.data_process import create_load_pdf_loader
+from dotenv import load_dotenv
 
+OPENAI_API_KEY = os.environ["open_ai_api"]
+load_dotenv()
 api_key = os.getenv('API_KEY')
 def chroma_vectordb():
     
@@ -19,5 +22,5 @@ def chroma_vectordb():
         vectorstore=store
     )
     # Convert the document store into a langchain toolkit
-    toolkit = VectorStoreToolkit(vectorstore_info=vectorstore_info, openai_api_key=api_key)
+    toolkit = VectorStoreToolkit(vectorstore_info=vectorstore_info)
     return toolkit, store
