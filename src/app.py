@@ -41,7 +41,6 @@ prompt = st.text_input("Input your prompt here")
 # If the user hits enter
 agent_executor = create_model_and_agent()
 if prompt:
-
     response = agent_executor.run(instruction +"."+ prompt)
     # print response to screen
     st.write(response)
